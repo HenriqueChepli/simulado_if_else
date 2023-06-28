@@ -9,10 +9,29 @@
     //Calcule o custo total dos alimentos e verifique se há dinheiro suficiente para realizar a compra, indicando se sobrará ou faltará dinheiro, e também apresentando qual foi a quantia que sobrou ou faltou para realizar a compra. Apresente também na tela o valor total da compra.
 
     //ENTRADA
-
+    const mamaoCompra = Number(prompt(`Qual o preço do Mamao?`).replace("," , "."));
+    const melanciaCompra = Number(prompt(`ual o preço da Melancia?`).replace("," , "."));
+    const abacateCompra = Number(prompt(`ual o preço do Abacate?`).replace("," , "."));
+    const cebolaCompra = Number(prompt(`ual o preço da Cebola?`).replace("," , "."));
+    const mamao = Number(prompt(`Quantos Mamao comprou?`).replace("," , "."));
+    const melancia = Number(prompt(`Quantas Melancia comprou?`).replace("," , "."));
+    const abacate = Number(prompt(`Quantas Abacate comprou?`).replace("," , "."));
+    const cebola = Number(prompt(`Quantas Cebola comprou?`).replace("," , "."));
+    const dinheiro = Number(prompt(`Quantos dinheiro tem pra gastar?`));
 
     //PROCESSAMENTO
+    let mensagemFinal = "";
+     mensagemFinal = (mamaoCompra * mamao) + (melanciaCompra * melancia) + (abacateCompra * abacate) + (cebolaCompra * cebola);
 
+     if(dinheiro >= mensagemFinal) {
+        mensagemFinal = dinheiro - mensagemFinal
+        alert(`Ha Dinheiro suficiente, sobrou ${mensagemFinal} reais.`);
+     }
+
+     if(dinheiro < mensagemFinal) {
+        mensagemFinal = dinheiro - mensagemFinal
+        alert(`Não ha dinheiro suficiente, faltou ${mensagemFinal} reais.`);
+     }
 
     //SAÍDA
 

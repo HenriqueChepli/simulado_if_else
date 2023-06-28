@@ -7,9 +7,34 @@
     //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
     //ENTRADA
-
+    const cargo = prompt(`Qual seu cargo? ("E" para Estagiario, e "P" para Programador.)`).trim();
+    let horas = Number(prompt(`Quantas horas você trabalha?`));
+    let salario = Number(prompt(`Quantos você recebe por hora?`));
 
     //PROCESSAMENTO
+    if (cargo === "E" && horas <= 6) {
+        salario = salario * (horas * 20)
+        alert(`Você trabalha por ${horas} horas e recebe ${salario} reais`);
+    }
+    
+    else if (cargo === "E" && horas > 6) {
+        salario = (salario * (horas * 20)) + (salario * 50/100)
+        alert(`Precisa ser contratado, seu salario vai sofrer um aumento de 50% e vai para ${salario}`);
+        }
+
+    else if (cargo === "P" && horas <= 8) {
+        salario = salario * (horas * 20)
+        alert(`Você trabalha por ${horas} e recebe ${salario}`);
+    }
+
+    else if (cargo === "P" && horas > 8) {
+        salario = (salario * (horas * 20)) + salario (salario * 30/100)
+        alert(`Seu salario vai sofrer um aumento de 30% e vai para ${salario}`);
+        }
+
+    else {
+        alert(`Valor Invalido`)
+    }
 
 
     //SAÍDA
